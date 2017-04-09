@@ -54,6 +54,10 @@ If migration required you can run::
 Then create the superuser::
 
     docker-compose run --rm web python manage.py createsuperuser
+    
+Finally, start the server::
+
+    docker-compose run --rm web python manage.py runserver
 
 
 Usage
