@@ -54,10 +54,39 @@ collect all results in greatly reduced.
 .. image:: etc/screenshot.png
 
 
-How It Works
-------------
+Sample execution
+----------------
 
-TODO: PROVIDE RELEVANT EXPLANATIONS HERE ...
+Sync session::
+
+    Downloaded "Django" from "http://djangoproject.com/" in 1.472037 [s]
+    Downloaded "Python" from "https://www.python.org/" in 0.139406 [s]
+    Downloaded "Mashable" from "http://mashable.com/" in 0.271376 [s]
+    Downloaded "Gizmodo" from "http://gizmodo.com/" in 0.262348 [s]
+    Downloaded "GigaOM" from "http://gigaom.com/" in 0.235854 [s]
+    Downloaded "ZDNet" from "http://www.zdnet.com/" in 0.444768 [s]
+    Downloaded "Computerworld Blogs" from "http://blogs.computerworld.com/" in 0.189739 [s]
+    Downloaded "Official Google Enterprise Blog" from "http://googleenterprise.blogspot.com/" in 1.3525 [s]
+    Downloaded "The Unofficial Apple Weblog" from "http://www.tuaw.com/" in 0.811099 [s]
+    Downloaded "How-To Geek" from "http://www.howtogeek.com/" in 0.181826 [s]
+    Downloaded "ITBusinessEdge.com" from "http://www.itbusinessedge.com/" in 1.278017 [s]
+    All downloads completed; elapsed time: 6.639587 [s]
+    Slowest download required: 1.472037 [s]
+
+Async session::
+
+    Start downloading "Django"
+    Start downloading "Python"
+    Start downloading "Mashable"
+    Start downloading "Gizmodo"
+    Start downloading "GigaOM"
+    Start downloading "ZDNet"
+    Start downloading "Computerworld Blogs"
+    Start downloading "Official Google Enterprise Blog"
+    Start downloading "The Unofficial Apple Weblog"
+    Start downloading "How-To Geek"
+    Start downloading "ITBusinessEdge.com"
+    All downloads completed; elapsed time: 1.387465 [s]
 
 
 Further Reading
