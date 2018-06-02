@@ -61,7 +61,6 @@
                 var dt = (new Date() - t0) / 1000;  // in seconds
                 var num_pages = Object.keys(data).length;
                 $('#message').text(num_pages + ' pages downloaded ' + (sync_mode ? "synchronously" : "asynchronously") + ' in ' + dt + ' seconds');
-                //$('#news').text(JSON.stringify(data));
                 $('#news').text(Object.keys(data));
             }
 
