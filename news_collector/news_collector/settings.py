@@ -24,18 +24,13 @@ redis_host = os.environ.get('REDIS_HOST', 'localhost')
 # http://channels.readthedocs.io/en/latest/topics/channel_layers.html
 CHANNEL_PREFIX = "asgi:"
 CHANNEL_LAYERS = {
-    "default": {
-        # This example app uses the Redis channel layer implementation channels_redis
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [(redis_host, 6379)],
-            'prefix': CHANNEL_PREFIX,
-        },
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
     },
 }
 
 # ASGI_APPLICATION should be set to your outermost router
-ASGI_APPLICATION = 'news_collector.routing.application'
+ASGI_APPLICATION = 'expresschat.asgi.application'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
