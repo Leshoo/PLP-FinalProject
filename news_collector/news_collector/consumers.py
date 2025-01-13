@@ -37,3 +37,32 @@ class ChatConsumer(AsyncWebsocketConsumer):
         await self.send(text_data=json.dumps({
             'message': message
         }))
+        
+        async def chat_message(self, event):
+    message = event['message']
+    user = event['user']
+
+    await self.send(text_data=json.dumps({
+        'message': message,
+        'user': user
+    }))
+
+from .models import Message
+
+async def receive(self, text_data):
+    text_data_json = json.loads(text_data)
+    message = text_data_json['message']
+    user = self.scope["user"]
+
+    # Save the message to the database
+    Message.objects.create(user=user, room_name=self.room_name, content=message)
+
+    await self.channel_layer.group_send(
+        self.room_group_name,
+        {
+            'type': 'chat_message',
+            'message': message,
+            'user': user.username
+        }
+    )
+
